@@ -1,0 +1,23 @@
+{
+  "name": "budgetapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"sass":"node-sass ./sass/index.scss index.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergetoure09/budgetApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergetoure09/budgetApp/issues"
+  },
+  "homepage": "https://github.com/sergetoure09/budgetApp#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}

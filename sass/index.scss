@@ -1,0 +1,359 @@
+// variables
+$color-green:#33B9B4;
+$color-red:#FC514E;
+$color-grey:#F7F7F7;
+$color-basic-white:white;
+
+$font-base:'Montserrat', sans-serif;
+
+//mixins
+
+@mixin clearfix{
+    &::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+
+@mixin center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
+
+
+
+//functions
+
+
+
+
+//extends
+
+
+
+
+//base
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    height: 100%
+}
+
+
+body{
+
+    font-family: $font-base;
+    text-align: center;
+    height: 100%;
+
+}
+
+
+
+
+
+//layout
+
+.header{
+    
+    background-image:linear-gradient(to bottom,rgba($color-green,.8) 30%,transparent), url('./bg-image-1.jpg');
+    height: 40vh;
+    background-size: cover;
+    position: relative;
+  
+    
+}
+
+
+.control{
+    height: 10vh;
+    background-color: $color-grey;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.199);
+
+}
+
+.main{
+    width: 70%;
+    height: 50vh;
+    margin: 0 auto;
+   // border: 1px solid red;
+    padding: 4rem 0;
+    
+
+
+}
+.display{
+   // position: relative;
+   // float: left;
+   @include clearfix();
+    margin-right: 1rem;
+    width: 45%;
+
+
+    &--income{
+        color: $color-green;
+        float: left;
+
+    }
+
+    &--expenses{
+        color: $color-red;
+        float: right;
+
+    }
+}
+
+
+
+//page
+
+
+
+
+//components
+.budget{
+    //@include center;
+    margin: 0 auto;
+    padding: 3rem;
+    width: 50%;
+    height: 90%;
+    //border: 1rem solid rgba($color-basic-white,.4); // to be delete
+    color: $color-basic-white;
+   
+
+
+
+    &>*:not(:last-child){
+        margin-bottom: 1.5rem;
+       // padding: 2rem;
+        
+    }
+
+    &__msg{
+        font-size: 1.7rem;
+        font-weight: 200;
+
+
+
+    }
+
+    &__balance{
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+        font-weight: 500;
+
+    }
+
+   
+
+    &__info{
+        margin: 0 auto;
+        //border: 1px solid white;
+        width: 50%;
+        height: 4rem;
+      // position: relative;
+       padding: 1rem 0;
+
+
+
+
+
+        &--income{
+            background-color: $color-green;
+
+        }
+
+        &--expenses{
+            background-color: $color-red;
+
+        }
+      
+
+    }
+    &__sticker{
+        //border: 1px solid red;
+        @include clearfix;
+        width: 100%;
+        
+
+
+
+        &__title{
+            display: inline-block;
+            width: 15%;
+            float:left;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: black;
+            margin-left: .8rem;
+
+            //border: 1px solid red;
+        }
+
+        &__amount{
+            display: inline-block;
+            width: 30%;
+            font-size: 1.5rem;
+            float: right;
+            letter-spacing: 1px;
+            //padding: 2px;
+            //border: 1px solid red;
+
+        }
+
+        &__inc{
+            display: inline-block;
+            width: 9%;
+            padding: .2rem;
+            margin-top: 2px;
+            background-color: rgba($color-basic-white,.6);
+            float: right;
+            margin-right: .5rem;
+            border-radius: 3px;
+
+           // border: 1px solid red;
+
+        }
+    }
+
+}
+
+.form{
+    //border: 1px solid red;
+    //width: 60%;
+    margin: 0rem auto;
+    padding: 1.5rem 0;
+    height: 100%;
+
+    &>*{
+        display: inline-block;
+        //float: left;
+        margin-right: 1rem;
+    }
+
+
+
+    &__typeOf{
+        width: 5rem;
+        height: 4rem;
+        outline: none;
+        font-size: 2rem;
+        background-color: white;
+        border: 1px solid rgba(128, 128, 128, 0.267);
+       //border-color: red;
+      
+
+      
+       
+
+    }
+
+    &__descOf{
+        width: 40rem;
+        height: 4rem;
+        padding: .5rem 2rem;
+        outline: none;
+        border: 1px solid rgba(128, 128, 128, 0.267);
+        border-radius: 5px;
+        font-size: 2rem;
+
+        &::-webkit-input-placeholder{
+            font-size: 1.5rem;
+            font-weight: 400;
+            color:rgba(128, 128, 128, 0.288);
+        }
+
+
+    }
+    
+
+    &__valueOf{
+        padding: .5rem 1rem;
+        width: 10rem;
+        height: 4rem;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.267);
+        font-size: 2rem;
+        &::-webkit-input-placeholder{
+            font-size: 1.5rem;
+            font-weight: 400;
+            color:rgba(128, 128, 128, 0.425);
+        }
+
+    }
+
+    &__submitBtn{
+        color: $color-green;
+        cursor: pointer;
+        position: absolute;
+        top: 34rem;
+        font-size: 3rem;
+       // margin-top: 3rem;
+
+
+    }
+}
+
+
+.title{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+//utilities
+
+.u-budget{
+    display: block;
+    width: 100%;
+    color: inherit;
+    padding: 0rem;
+
+    &:nth-child(odd){
+        background-color: $color-grey;
+    }
+}
+.u-budget-sticker{
+    width: 100%;
+    border-top: 1px solid rgba(138, 130, 130, 0.274);
+    border-bottom: 1px solid rgba(138, 130, 130, 0.274);
+    padding: 1.7rem 0;
+
+   
+    
+}
+
+.u-budget-sticker-income{
+
+
+}
+
+.u-budget-sticker-expenses{
+
+    
+    
+}
+.u-inc{background-color: rgba($color-red,.2);}

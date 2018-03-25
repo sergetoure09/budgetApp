@@ -125,8 +125,8 @@ body{
 //components
 .budget{
     //@include center;
-    margin: 0 auto;
-    padding: 3rem;
+    margin: 0rem auto;
+    padding: 7rem;
     width: 50%;
     height: 90%;
     //border: 1rem solid rgba($color-basic-white,.4); // to be delete
@@ -136,7 +136,7 @@ body{
 
 
     &>*:not(:last-child){
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.9rem;
        // padding: 2rem;
         
     }
@@ -161,7 +161,7 @@ body{
     &__info{
         margin: 0 auto;
         //border: 1px solid white;
-        width: 50%;
+        width: 60%;
         height: 4rem;
       // position: relative;
        padding: 1rem 0;
@@ -191,7 +191,7 @@ body{
 
 
         &__title{
-            display: inline-block;
+           // display: inline-block;
             width: 15%;
             float:left;
             font-size: 1.5rem;
@@ -204,29 +204,65 @@ body{
         }
 
         &__amount{
-            display: inline-block;
+           // display: inline-block;
             width: 30%;
             font-size: 1.5rem;
             float: right;
             letter-spacing: 1px;
+            transition: all .3s;
             //padding: 2px;
             //border: 1px solid red;
 
         }
 
         &__inc{
-            display: inline-block;
+            //display: inline-block;
             width: 9%;
+            //color: blac;
             padding: .2rem;
             margin-top: 2px;
             background-color: rgba($color-basic-white,.6);
             float: right;
-            margin-right: .5rem;
+            margin-right: 5px;
             border-radius: 3px;
+            transition: all .3s;
 
            // border: 1px solid red;
 
         }
+
+
+        &__del{
+            //margin-top: -3px;
+            width: 9%;
+            padding: .2rem;
+            margin-top: -2px;
+            background-color: rgba($color-basic-white,.3);
+            float: right;
+            font-weight: 100;
+            font-size: 100;
+            margin-right: .5rem;
+            border-radius: 3px;
+            transition: all .1s;
+            
+            //display:none;
+            visibility: hidden;
+            //transition: all .3s;
+            
+           
+
+        }
+
+        &:hover &__del{
+           // display:inline-block;
+            visibility: visible;
+        }
+        &:hover &__inc{
+            margin-right: 2rem;
+            //margin-left: -1rem;
+        }
+
+
     }
 
 }
@@ -337,23 +373,38 @@ body{
     }
 }
 .u-budget-sticker{
-    width: 100%;
+    width: 110%;
     border-top: 1px solid rgba(138, 130, 130, 0.274);
-    border-bottom: 1px solid rgba(138, 130, 130, 0.274);
-    padding: 1.7rem 0;
+    //border-bottom: 1px solid rgba(138, 130, 130, 0.274);
+    padding: 1rem 0;
 
    
     
 }
 
-.u-budget-sticker-income{
-
+.u-title{
+    font-size: 1.2rem;
+    font-weight: 300;
+    width: 20%;
+    text-align: left;
 
 }
 
-.u-budget-sticker-expenses{
+// .u-budget-sticker-income{
+
+
+// }
+
+// .u-budget-sticker-expenses{
 
     
     
+// }
+.u-inc{background-color: rgba($color-red,.2);margin-right: -2rem;}
+.u-display-none{visibility: hidden}
+.u-margin-right-adjust{margin-right: -8rem;
 }
-.u-inc{background-color: rgba($color-red,.2);}
+.material-icons{
+
+    cursor: pointer;
+}

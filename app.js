@@ -66,6 +66,13 @@ var incPart = document.querySelector("#incPart")
 var expPart = document.querySelector('#expPart')
 
 var globalBalance = document.querySelector('#globalBalance')
+var date=document.querySelector('#date')
+
+var now=new Date()
+var year=now.getFullYear()
+var month=now.toLocaleString("en-us",{month:'long'})
+
+date.textContent=`${month} ${year}`
 
 btnAdd.addEventListener('click', function () {
 
@@ -100,6 +107,12 @@ var check_push_item = function (itemList, pushFn) {
     incPart.innerHTML = ''
     expPart.innerHTML = ''
 //ADD CASE WHERE THERE IS NOTHING IN THE LIST AND INIT INCOME AND GLOBAL BALANCE
+if (itemList.length===0){
+    income.textContent=0
+    expense.textContent=0
+    globalBalance.textContent=0
+}
+else{
     itemList.forEach(function (item, key) {
 
 
@@ -162,7 +175,7 @@ var check_push_item = function (itemList, pushFn) {
 
 
 
-    })
+    })}
 
     init()
 }
